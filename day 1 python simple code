@@ -1,0 +1,11 @@
+name=input ("what is your name ?")
+age=input(int("34"))
+print("hi(nike)!n")
+print(age)
+  (simple input and output )
+
+  number=2
+numbera=2
+mul=(number*numbera)
+print(mul)
+  #simple mul tiplication of two integers#
