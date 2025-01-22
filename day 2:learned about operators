@@ -1,0 +1,32 @@
+day 2 learned about operators and created a simple calculator 
+
+
+A=float(input("enter a number" ))
+
+B=float(input("enter another number" ))
+
+print("select an operator")
+print("1. addition")
+print("2. substraction")
+print("4. multiplication")
+print("3. division(/)")
+
+choice = input("enter a choice(1/2/3/4): ")
+
+if choice == '1':
+    print("result ", A + B )
+
+elif choice == '2':
+    print("result " , A - B )
+
+elif choice == '3':
+   print("result ", A * B )
+
+elif choice == '4':
+    if B != 0:
+      print("result ", A / B )
+    else:
+        print("error")
+
+else:
+    print("choose valid next time ")    
