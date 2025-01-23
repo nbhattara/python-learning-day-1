@@ -1,0 +1,17 @@
+day three of learning python today i learned conditionals of the language python (if, elif(else if), else )
+i made a program that used to find largest number :
+
+
+#sc
+
+num1 = float(input("enter a number: "))
+num2 = float(input("enter second number: "))
+num3 = float(input("enter third number: "))
+
+if num1 >= num2 and num2 >= num3:
+  largest = num1
+elif num2 >= num1 and num1 >= num3:
+  largest = num2
+else:
+  largest = num3
+  print("the largest number is:",largest)
