@@ -1,0 +1,21 @@
+contact_list = {
+    "nishan": "12456",
+    "rupesh":  "1245",
+    "aryan":  "78945",
+}
+print(contact_list)
+
+#search
+
+name = (input("enter name:"))
+print(contact_list[name])
+
+
+
+#add name
+name = input("enter name:")
+phone_number = input("enter phone number:") 
+contact_list[name] = phone_number
+
+
+print(contact_list)
