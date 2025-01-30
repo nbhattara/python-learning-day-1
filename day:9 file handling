@@ -1,0 +1,16 @@
+
+def log_user_input():
+    filename = "file ho hai.txt"
+    
+    while True:
+        user_input = input("Enter something to log (type 'xaina' to quit): ")
+        
+        if user_input.lower() == 'xaina':
+            print("Exiting and saving logs.")
+            break
+
+        with open(filename, "a") as file:
+            file.write(user_input + "\n")
+        print(f"pasyo: {user_input}")
+
+log_user_input()
