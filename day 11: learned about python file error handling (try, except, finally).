@@ -1,0 +1,16 @@
+ (try, except, finally).
+
+
+try:
+    
+    with open("file ho hai.txt", "r") as file:
+        content = file.read()
+        print(content)
+except FileNotFoundError:
+    
+    print("Error: The file was not found.")
+except PermissionError:
+    print("Error: You don't have permission to access the file.")
+finally:
+    print("Program finished.")
+
