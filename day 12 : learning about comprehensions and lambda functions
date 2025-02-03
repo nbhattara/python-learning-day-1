@@ -1,0 +1,11 @@
+source code that will give result for square no and one by one added no by 1
+
+
+numbers = [1 ,2 ,3 ,4 ,5 ,6 ,7 ,8 ,9 ,10]
+square_number = [x**2 for x in numbers if x % 2 == 0]
+print(square_number)
+
+sum = [ x+1 for x in numbers ]
+print()#this makes gap so user can read output but this below result makes no sense 
+print("the nums printed below are for fun nothing is happening :")
+print(sum)
