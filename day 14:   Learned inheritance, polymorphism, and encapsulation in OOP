@@ -1,0 +1,135 @@
+this program is for bank account that can transform into usd or euro with same money provided one bank account but different currency 
+class BankAccount :
+      def __init__(self , account  , balance=0  ):
+        self.account = account
+        self.balance = balance
+       
+
+      def deposit(self,amount):
+        self.balance  += amount
+        print(f" deposited {amount}.new balance {self.balance}")
+
+
+      def withdraw(self,amount):
+        if amount > self.balance:
+            print("insufficient funds")
+        else:
+            self.balance -= amount
+            print(f"Withdrew {amount}.new balance {self.balance}")
+
+      def check_balance(self):
+        print(f"Current balance: {self.balance}")
+
+
+
+class UsdBankAccount(BankAccount) :
+    def __init__(self, balance=0):
+        super().__init__(balance, "USD")
+
+    def withdraw(self, amount):
+        print(f"Processing USD withdrawal...")
+        super().withdraw(amount)
+
+
+class EURAccount(BankAccount):
+    def __init__(self, balance=0):
+        super().__init__(balance, "EUR")
+
+    def withdraw(self, amount):
+        print(f"Processing EUR withdrawal with a fixed fee of 2 EUR.")
+        if amount + 2 <= self.get_balance():
+            super().withdraw(amount + 2)
+        else:
+            print("Insufficient funds (including fee).")  
+
+
+            
+account = BankAccount("nikesh",1000)
+
+
+while True:
+      print("\n1. Deposit\n2. Withdraw\n3. Check Balance \n4. other currency  \n5. Exit")
+      choice = input("Choose an option: ")
+            
+      if choice == "1":
+           amount = int(input("Enter amount to deposit: "))
+           account.deposit(amount)
+
+      elif choice == "2":
+          amount = int(input("Enter amount to withdraw: "))
+          account.withdraw(amount)
+
+      elif choice == "3":
+          print(f"Balance: {account.balance}")
+
+      elif choice == "4":
+          print("Choose currency:")
+          print("\n1.USD  \n2.EURO")
+          choice = input("Choose an option: ")
+          if choice == "1":
+              
+              USD_acc=UsdBankAccount(BankAccount)
+
+              while True:
+               print("usd transaction")
+               print("\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit")
+               choice = input("Choose an option: ")
+            
+               if choice == "1":
+                amount = int(input("Enter amount to deposit: "))
+
+                account.deposit(amount / 139.50)
+
+               if choice == "2":
+                  amount = int(input("Enter amount to withdraw: "))
+                  account.withdraw(amount / 139.50)
+ 
+               elif choice == "3":
+                 print(f"Balance: {account.balance / 139.50}")
+
+
+               elif choice == "4":
+                    print(" closing transaction . thanks for using our bank")
+                    break 
+          
+          if choice =="2": 
+           USD_acc=EURAccount(BankAccount)
+
+          while True:
+            print("euro transaction")
+            print("\n1. Deposit\n2. Withdraw\n3. Check Balance\n4. Exit")
+            choice = input("Choose an option: ")
+            
+            if choice == "1":
+             amount = int(input("Enter amount to deposit: "))
+
+             account.deposit(amount / 145.41)
+
+            if choice == "2":
+             amount = int(input("Enter amount to withdraw: "))
+             account.withdraw(amount / 145.41)
+
+            elif choice == "3":
+              print(f"Balance: {account.balance / 145.41}")
+
+
+            elif choice == "4":
+               print(" closing transaction . thanks for using our bank")
+               break
+
+            else: 
+              print("invalid choice")
+          
+          
+      elif choice == "5":
+            print(" closing transaction . thanks for using our bank")
+            break
+
+      else: 
+           print("invalid choice")
+
+
+
+
+
+     
